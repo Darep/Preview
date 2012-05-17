@@ -44,5 +44,24 @@ img.hidden {
         box-shadow: 0 0 15px #111;
         -moz-box-shadow: 0 0 15px #111;
         -webkit-box-shadow: 0 0 15px #111;
+        -webkit-animation:fadein 250ms ease-out 50ms;
+        -webkit-animation-fill-mode: both;
+    }
+}
+
+@-webkit-keyframes fadein {
+    0% {
+        opacity:0;
+        -webkit-transform: translateY(-80px);
+    }
+    20% {
+        opacity:0;
+    }
+    80% {
+        -webkit-transform:translateY(-20px);
+    }
+    100% {
+        opacity:1.0;
+        -webkit-transform: translateY(0px);
     }
 }
