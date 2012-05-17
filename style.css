@@ -1,0 +1,21 @@
+* {
+  margin:0;
+  padding:0;
+  border:none;
+}
+
+#install {
+  padding-top:50%;
+  font:14px "helvetica neue", helvetica, sans-serif;
+  background:#ddd;
+  text-align:center;
+  text-shadow:0 1px 0 #fff;
+}
+
+#launch img {
+  position:absolute;
+}
+
+#launch img.hidden {
+  display:none;
+}

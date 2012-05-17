@@ -1,0 +1,71 @@
+﻿<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="utf-8" />
+    <title>Preview</title>
+
+    <style type="text/css">
+        body {
+            background: #333;
+            color: #fff;
+            font-size: 0.875em; /* 14px */
+            font-family: Georgia, serif;
+            line-height:1.6em;
+        }
+        #wrap {
+            overflow:hidden;
+            padding:120px 0 0;
+            margin:0 auto;
+            text-align:center;
+            width:100%;
+        }
+        img {
+            cursor:pointer;
+            display:inline-block;
+            margin:10px;
+            position:relative;
+            max-width:320px;
+            box-shadow: 0 0 15px #111;
+            -moz-box-shadow: 0 0 15px #111;
+            -webkit-box-shadow: 0 0 15px #111;
+        }
+    </style>
+    <script type="text/javascript">
+    var launch = function () {
+        var wrap = document.getElementById("wrap");
+    
+        var createScreenshot = function (i) {
+            var screenshot = document.createElement("img");
+            var imgUrl = "screenshots/" + i + ".png";
+            
+            screenshot.setAttribute(
+                "src", imgUrl + "?" + Math.round(Math.random()*100000)
+            );
+            
+            screenshot.addEventListener("load", function () {
+                createScreenshot(i + 1);
+                if (i == 1) {
+                    wrap.innerHTML = "";
+                }
+                wrap.appendChild(screenshot);
+            });
+            
+            screenshot.addEventListener('click', function () {
+                window.location = imgUrl;
+            });
+        }
+        
+        createScreenshot(1);
+    };
+    
+    window.addEventListener("load", launch);
+    </script>
+</head>
+<body>
+
+<div id="wrap">
+    Loading...
+</div>
+
+</body>
+</html>
