@@ -1,21 +1,48 @@
 * {
-  margin:0;
-  padding:0;
-  border:none;
+    border:none;
+    margin:0;
+    padding:0;
+}
+
+body {
+    background: #333;
+    color: #fff;
+    font: 14px Georgia, serif;
+    line-height:1.6em;
+}
+
+#wrap {
+    text-align:center;
 }
 
 #install {
-  padding-top:50%;
-  font:14px "helvetica neue", helvetica, sans-serif;
-  background:#ddd;
-  text-align:center;
-  text-shadow:0 1px 0 #fff;
+    padding-top:50%;
+    text-align:center;
+    text-shadow:0 1px 0 #000;
 }
 
-#launch img {
-  position:absolute;
+img {
+    position:absolute;
+}
+img.hidden {
+    display:none;
 }
 
-#launch img.hidden {
-  display:none;
+@media screen and (min-width: 700px) {
+    #wrap {
+        overflow:hidden;
+        padding:10% 0;
+        margin:0 auto;
+    }
+
+    img {
+        cursor:pointer;
+        display:inline-block;
+        margin:10px;
+        position:relative;
+        max-width:320px;
+        box-shadow: 0 0 15px #111;
+        -moz-box-shadow: 0 0 15px #111;
+        -webkit-box-shadow: 0 0 15px #111;
+    }
 }
