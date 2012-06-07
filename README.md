@@ -1,7 +1,8 @@
 # Preview
 
-Simple single file client-side gallery for smartphone layout mockup images, wireframe images or any images.
-iPhone: Tap on the screen to change the image.
+Preview your smartphone layout mockup or wireframe images in the browser!
+
+Tap on the screen to change the image
 
 ## Setup
 
