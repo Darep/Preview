@@ -30,7 +30,29 @@ function launch() {
 
         if (isTouchDevice) {
             screenshot.setAttribute("class", hiddenClass);
-            screenshot.addEventListener("touchend", function() {
+
+            var start_x = 0;
+            var start_y = 0;
+            var delta_x = 0;
+            var delta_y = 0;
+            
+            screenshot.addEventListener("touchstart", function (event) {
+                start_x = event.touches[0].pageX;
+                start_y = event.touches[0].pageY;
+                delta_x = 0;
+                delta_y = 0;
+            });
+
+            screenshot.addEventListener("touchmove", function (event) {
+                delta_x = Math.abs(event.touches[0].pageX - start_x);
+                delta_y = Math.abs(event.touches[0].pageY - start_y);
+            });
+
+            screenshot.addEventListener("touchend", function (event) {
+                if (delta_x > 10 || delta_y > 10) {
+                    return;
+                }
+
                 this.setAttribute("class", hiddenClass);
                 if (this.webkitMatchesSelector(":last-child")) {
                     displayFirstScreenshot();
@@ -64,7 +86,8 @@ function launch() {
 
 function ready() {
     if (isTouchDevice && !navigator.standalone) {
-        install();
+        //install();
+        launch();
     }
     else {
         launch();
